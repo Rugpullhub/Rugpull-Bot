@@ -28,6 +28,6 @@ Built with a sleek, professional terminal UI optimized for Termux and Linux envi
 ### 🚀 Quick Start
 
 ```bash
-git clone https://github.com/yourusername/rugpull-bot-pro.git
+git clone https://github.com/Rugpullhub/Rugpull-Bot
 cd Rugpull-Bot
 python3 rugpull.py
