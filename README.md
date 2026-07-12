@@ -29,5 +29,5 @@ Built with a sleek, professional terminal UI optimized for Termux and Linux envi
 
 ```bash
 git clone https://github.com/yourusername/rugpull-bot-pro.git
-cd rugpull-bot-pro
+cd Rugpull-Bot
 python3 main.py
