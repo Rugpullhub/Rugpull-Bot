@@ -32,4 +32,4 @@ git clone https://github.com/Rugpullhub/Rugpull-Bot
 cd Rugpull-Bot
 python3 rugpull.py
 
-Telegram : t.me/DHUB_STORY
+Telegram : @DHUB_STORY
