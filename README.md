@@ -31,3 +31,5 @@ Built with a sleek, professional terminal UI optimized for Termux and Linux envi
 git clone https://github.com/Rugpullhub/Rugpull-Bot
 cd Rugpull-Bot
 python3 rugpull.py
+
+Telegram : t.me/DHUB_STORY
