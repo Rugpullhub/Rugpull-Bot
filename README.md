@@ -30,6 +30,6 @@ Built with a sleek, professional terminal UI optimized for Termux and Linux envi
 ```bash
 git clone https://github.com/Rugpullhub/Rugpull-Bot
 cd Rugpull-Bot
-python3 rugpull.py
+python Newest.py
 
 Telegram : @DHUB_STORY
