@@ -1,35 +1,39 @@
-# RUGPULL BOT PRO v2.0
+# GROWTOPIA WEB — Fan Demo (Pixel Sandbox Game)
 
-![Version](https://img.shields.io/badge/Version-2.0-brightgreen)
-![Platform](https://img.shields.io/badge/Platform-Termux%20%7C%20Linux-blue)
-![Chain](https://img.shields.io/badge/Chain-Solana%20%7C%20ETH%20%7C%20BSC%20%7C%20Base-orange)
+Game sandbox 2D pixel-art bergaya **Growtopia**, 100% prosedural (tanpa aset eksternal), dibuat dengan Next.js + Canvas 2D.
 
-**The ultimate crypto exit liquidity tool for serious degens.**
+> Cabang `growtopia-web-game` khusus berisi game web ini. Branch `main` tidak diubah.
 
----
+## Fitur (Tahap 1 — Default World)
+- World 100x54 tile: Dirt, Grass, Cave Background, Rock, Lava, Air, Bedrock, Door, Main Door
+- Karakter chibi **1 blok** ala Growtopia: idle/berkedip, jalan 4-frame, lompat, jatuh, renang, animasi pukul
+- Hancurkan & pasang blok, drop item bermagnet, inventori hotbar 9 slot
+- Cairan mengalir (air + lava = rock), lava membakar, respawn ke Main Door
+- Chat in-game dengan bubble, SFX 8-bit WebAudio, save otomatis (localStorage)
+- Kontrol keyboard + tombol sentuh untuk HP
 
-### 🔥 Overview
+## Cara Deploy ke Vercel (Gratis)
+1. Buka [vercel.com/new](https://vercel.com/new) dan import repo ini
+2. Pilih **Production Branch: `growtopia-web-game`**
+3. Framework auto-terdeteksi (Next.js) — langsung klik **Deploy**
 
-Rugpull Bot PRO is a powerful, multi-chain cryptocurrency tool designed for maximum efficiency in the memecoin meta. Whether you're launching, pumping, or executing a clean exit — this bot delivers.
-
-Built with a sleek, professional terminal UI optimized for Termux and Linux environments.
-
-### ✨ Key Features
-
-- **Multi-Wallet Support** — Phantom, Trust Wallet, & Pump.fun
-- **Fast Token Deployment** — Launch memecoins in seconds
-- **Volume Booster** — Advanced buy volume & sniping system
-- **One-Click Rugpull** — Clean liquidity drain with one command
-- **Multi-Chain Ready** — Solana, Ethereum, BSC, Base
-- **Honeypot & Rug Checker Bypass**
-- **Real-time Telegram Notification**
-- **Premium Terminal UI** with loading animations & progress bars
-
-### 🚀 Quick Start
+Jalankan lokal:
 
 ```bash
-git clone https://github.com/Rugpullhub/Rugpull-Bot
-cd Rugpull-Bot
-python Newest.py
+npm install
+npm run dev
+```
 
-Telegram : @DHUB_STORY
+## Kontrol
+| Aksi | Tombol |
+|---|---|
+| Gerak | A / D atau ←/→ |
+| Lompat | W / Spasi (di air: renang naik) |
+| Pukul / Pasang | Klik kiri (klik kanan = paksa tinju) |
+| Ganti slot | 1-9 / scroll / klik hotbar |
+| Masuk pintu | E atau Naik saat di depan pintu |
+| Chat | T atau Enter |
+| Menu | Esc |
+
+---
+Fan-made tribute. Tidak berafiliasi dengan Ubisoft / Growtopia.
