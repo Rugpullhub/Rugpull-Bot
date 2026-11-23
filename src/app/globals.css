@@ -1,0 +1,201 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ================= GROWTOPIA WEB ================= */
+
+.gt-canvas {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  display: block;
+}
+
+.gt-pixel { font-family: var(--font-pixel), monospace; }
+.gt-vt { font-family: var(--font-vt), monospace; }
+
+.gt-sky {
+  background: linear-gradient(180deg, #6ec2f2 0%, #a8dcf7 55%, #c9ecff 100%);
+}
+
+/* tombol ala UI Growtopia (batu abu-abu dengan bevel) */
+.gt-btn {
+  font-family: var(--font-pixel), monospace;
+  color: #fff;
+  background: linear-gradient(180deg, #aeb6bd 0%, #8d979f 55%, #77828b 100%);
+  border: 3px solid #454e56;
+  box-shadow:
+    inset 0 3px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.25),
+    0 3px 0 rgba(0, 0, 0, 0.35);
+  text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.45);
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: transform 0.06s ease, filter 0.1s ease;
+  user-select: none;
+}
+.gt-btn:hover { filter: brightness(1.1); }
+.gt-btn:active { transform: translateY(2px); box-shadow: inset 0 3px 0 rgba(255,255,255,0.25), 0 1px 0 rgba(0,0,0,0.3); }
+.gt-btn-green { background: linear-gradient(180deg, #7ed957 0%, #4caf3f 55%, #3b8f30 100%); border-color: #2c6b23; }
+.gt-btn-red { background: linear-gradient(180deg, #f0796a 0%, #d84b38 55%, #b03a2a 100%); border-color: #7c241a; }
+
+.gt-panel {
+  background: rgba(16, 26, 40, 0.88);
+  border: 3px solid #3c4b5e;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.06), 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+/* hotbar */
+.gt-slot {
+  background: rgba(10, 18, 30, 0.72);
+  border: 3px solid rgba(120, 140, 160, 0.75);
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.35);
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gt-slot img { image-rendering: pixelated; pointer-events: none; }
+.gt-slot.sel {
+  border-color: #ffd23f;
+  box-shadow: 0 0 0 2px #ffd23f, inset 0 0 8px rgba(255, 210, 63, 0.35);
+}
+.gt-slot .cnt {
+  position: absolute;
+  right: 2px;
+  bottom: 1px;
+  font-family: var(--font-pixel), monospace;
+  font-size: 7px;
+  color: #fff;
+  text-shadow: 1px 1px 0 #000;
+}
+.gt-slot .num {
+  position: absolute;
+  left: 3px;
+  top: 2px;
+  font-family: var(--font-pixel), monospace;
+  font-size: 6px;
+  color: rgba(255, 255, 255, 0.55);
+  text-shadow: 1px 1px 0 #000;
+}
+
+.gt-worldname {
+  font-family: var(--font-pixel), monospace;
+  color: #fff;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.6);
+  letter-spacing: 1px;
+}
+
+/* toast ala pesan sistem Growtopia */
+@keyframes gt-toast-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.gt-toast {
+  animation: gt-toast-in 0.18s ease-out;
+  background: rgba(10, 16, 26, 0.85);
+  border: 2px solid rgba(140, 160, 180, 0.6);
+  color: #fff;
+  font-family: var(--font-vt), monospace;
+  font-size: 19px;
+  padding: 4px 14px;
+  border-radius: 6px;
+}
+
+@keyframes gt-chat-fade {
+  0%, 70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.gt-chatline {
+  font-family: var(--font-vt), monospace;
+  font-size: 19px;
+  color: #fff;
+  text-shadow: 1px 1px 0 #000, 0 0 4px rgba(0,0,0,.5);
+  animation: gt-chat-fade 9s forwards;
+}
+
+/* tombol sentuh */
+.gt-touch {
+  border-radius: 9999px;
+  background: rgba(10, 18, 30, 0.5);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+.gt-touch:active { background: rgba(255, 255, 255, 0.3); }
+.gt-touch .tri { width: 0; height: 0; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
+.gt-touch .tri-l { border-right: 18px solid #fff; }
+.gt-touch .tri-r { border-left: 18px solid #fff; }
+.gt-touch .tri-u { border-right: 12px solid transparent; border-left: 12px solid transparent; border-bottom: 18px solid #fff; }
+
+/* logo title */
+@keyframes gt-float {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-14px) rotate(2deg); }
+}
+.gt-float { animation: gt-float 4s ease-in-out infinite; }
+.gt-logo-letter {
+  font-family: var(--font-pixel), monospace;
+  display: inline-block;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4), 5px 5px 0 rgba(0, 0, 0, 0.15);
+}
+
+.gt-input {
+  font-family: var(--font-pixel), monospace;
+  background: #f5f2e8;
+  border: 3px solid #454e56;
+  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.15);
+  color: #1d2b3a;
+  padding: 9px 12px;
+  letter-spacing: 1px;
+  outline: none;
+  width: 100%;
+}
+.gt-input:focus { border-color: #ffd23f; }
